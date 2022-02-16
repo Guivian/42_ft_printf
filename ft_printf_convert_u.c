@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printf_convert_u.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 18:19:21 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/16 16:49:17 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/02/16 16:47:02 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/02/16 16:51:21 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdio.h>
-# include <stdarg.h>
-# include <unistd.h>
-# include "libft/libft.h"
+#include "ft_printf.h"
 
-int	ft_printf_iteri(const char *format, va_list *args, int counter);
-int	ft_printf_convert_c(char c);
-int	ft_printf_convert_s(char *s);
-int	ft_printf_convert_p(void *p);
-int	ft_printf_convert_d(int d);
-int	ft_printf_convert_i(int i);
-int	ft_printf_convert_u(int u);
-
-#endif
+int	ft_printf_convert_u(unsigned int u)
+{
+	return (write(1, ft_itoa(u), ft_strlen(ft_itoa(u))));
+}
