@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf_convert_x.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 18:23:24 by lbarbosa          #+#    #+#             */
-/*   Updated: 2021/11/05 19:08:46 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/02/17 19:00:51 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/02/17 21:39:19 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_printf_convert_x(int x)
 {
-	unsigned int	nbr;
-
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nbr = (unsigned int)n * -1;
-	}
-	else
-		nbr = (unsigned int) n;
-	if (nbr >= 10)
-		ft_putnbr_fd(nbr / 10, fd);
-	ft_putchar_fd(nbr % 10 + '0', fd);
+	ft_putbase(x, "0123456789abcdef", 16);
+	return(1);
 }
