@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_hex.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 18:23:24 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/16 17:11:36 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/02/17 17:46:50 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/02/17 17:59:00 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <unistd.h>
 
-void	ft_puthex_fd(int n, int fd)
+void	ft_puthex(int n)
 {
 	unsigned int	nbr;
 	char *ptr;
@@ -26,11 +27,6 @@ void	ft_puthex_fd(int n, int fd)
 	else
 		nbr = (unsigned int) n;
 	if (nbr >= 16)
-		ft_puthex_fd(nbr / 16, fd);
+		ft_puthex(nbr / 16);
 	write(1, &ptr[nbr % 16], 1);
-}
-
-int	main(void)
-{
-	ft_puthex_fd(1545654, 1);
 }
