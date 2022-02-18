@@ -6,14 +6,15 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:06:57 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/17 21:39:27 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/18 20:37:15 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_convert_mx(int mx)
+int	ft_printf_convert_mx(long mx)
 {
+	write(1, "0X", 2);
 	ft_putbase(mx, "0123456789ABCDEF", 16);
 	return(1);
 }

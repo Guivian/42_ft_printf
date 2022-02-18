@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:20:48 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/17 21:36:31 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/18 20:39:52 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	ft_printf_iteri(const char *format, va_list *args, int counter)
 				counter += ft_printf_convert_c(va_arg(*args, int));
 			else if (format[i] == 's')
 				counter += ft_printf_convert_s(va_arg(*args, char*));
-//			else if (format[i] == 'p')
-//				counter += ft_printf_convert_p(va_arg(*args, void*));
+			else if (format[i] == 'p')
+				counter += ft_printf_convert_p(va_arg(*args, long));
 			else if (format[i] == 'd')
 				counter += ft_printf_convert_di(va_arg(*args, int));
 			else if (format[i] == 'i')
@@ -46,9 +46,9 @@ int	ft_printf_iteri(const char *format, va_list *args, int counter)
 			else if (format[i] == 'u')
 				counter +=ft_printf_convert_u(va_arg(*args, unsigned int));
 			else if (format[i] == 'x')
-				counter += ft_printf_convert_x(va_arg(*args, int));
+				counter += ft_printf_convert_x(va_arg(*args, long));
 			else if (format[i] == 'X')
-				counter = ft_printf_convert_mx(va_arg(*args, int));
+				counter = ft_printf_convert_mx(va_arg(*args, long));
 			else if (format[i] == '%')
 			{
 				counter += 1;
