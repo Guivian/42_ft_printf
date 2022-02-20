@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 16:53:56 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/13 20:22:00 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/20 19:38:25 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,3 @@ static char	*trimmed_malloc(const char *s1, const char *set)
 	trimmed = (char *)malloc(sizeof(char) * (trimmedlen + 2));
 	return (trimmed);
 }
-
