@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:20:48 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/18 20:39:52 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/23 20:52:12 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
+	va_list	args;
 	int		counter;
 
 	counter = 0;
@@ -23,9 +23,10 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (counter);
 }
+
 int	ft_printf_iteri(const char *format, va_list *args, int counter)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (format && format[i])
@@ -44,7 +45,7 @@ int	ft_printf_iteri(const char *format, va_list *args, int counter)
 			else if (format[i] == 'i')
 				counter += ft_printf_convert_di(va_arg(*args, int));
 			else if (format[i] == 'u')
-				counter +=ft_printf_convert_u(va_arg(*args, unsigned int));
+				counter += ft_printf_convert_u(va_arg(*args, unsigned int));
 			else if (format[i] == 'x')
 				counter += ft_printf_convert_x(va_arg(*args, long));
 			else if (format[i] == 'X')
@@ -56,27 +57,36 @@ int	ft_printf_iteri(const char *format, va_list *args, int counter)
 			}
 		}
 		else
-			counter += write(1, &format[counter], 1);
+			counter += write(1, &format[i], 1);
 		i++;
 	}
 	return (counter);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	int len;
-	len = ft_printf("%c%c%c%c%c%c%c%c%c%c%c%c",'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '\n');
-	printf("%i\n", len);
-	len = ft_printf("%s", "Ola Mundo\n");
-	printf("%i\n", len);
-	len = ft_printf("%i%c", 100599, '\n');
-	printf("%i\n", len);
-	len = ft_printf("%d%c", -1999, '\n');
-	printf("%i\n", len);
-	len = ft_printf("%u\n", 100, '\n');
-	printf("%i\n", len);
-	len = ft_printf("%x%c", 5613, '\n');
-	printf("%i\n", len);
-	len = ft_printf("%X%c", 456456, '\n');
-	printf("%i\n", len);
-}
+	ft_printf(" %x ", 0);
+	ft_printf(" %x ", 1);
+	ft_printf(" %x ", -1);
+	ft_printf(" %x ", 1);
+	ft_printf(" %x ", 9);
+	ft_printf(" %x ", 10);
+	ft_printf(" %x ", 11);
+	ft_printf(" %x ", 15);
+	ft_printf(" %x ", 16);
+	ft_printf(" %x ", 17);
+	ft_printf(" %x ", 99);
+	ft_printf(" %x ", 100);
+	ft_printf(" %x ", 101);
+	ft_printf(" %x ", -9);
+	ft_printf(" %x ", -10);
+	ft_printf(" %x ", -11);
+	ft_printf(" %x ", -14);
+	ft_printf(" %x ", -15);
+	ft_printf(" %x ", -16);
+	ft_printf(" %x ", -99);
+	ft_printf(" %x ", -100);
+	ft_printf(" %x ", -101);
+	ft_printf(" %x ", 42);
+	ft_printf(" %x ", -42);
+}*/

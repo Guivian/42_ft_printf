@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:53:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/18 20:45:28 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/23 18:46:46 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ int	ft_printf_convert_p(long p)
 {
 	write(1, "0x", 2);
 	ft_putbase(p, "0123456789abcdef", 16);
-	return(1);
+	return (1);
 }

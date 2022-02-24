@@ -1,44 +1,47 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/02/18 20:45:57 by lbarbosa          #+#    #+#              #
+#    Updated: 2022/02/23 18:55:54 by lbarbosa         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libftprintf.a
 
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-#Dir of the libft
-
-LIBFT = libft
-
-#File .h || -L = dir of the .h file || -lft, -l to say its a lib, ft the name of the lib
+LIBFT_DIR =	libft
 
 HEADER = ft_printf.h -L./libft -lft
 
-SRCS = $(wildcard *.c)
+C_SRC = ft_printf.c ft_printf_convert_c.c ft_printf_convert_s.c ft_printf_convert_di.c ft_printf_convert_u.c ft_printf_convert_p.c ft_printf_convert_x.c ft_printf_convert_mx.c
 
-OBJS = $(SRCS:.c=.o)
+SRC_OBJ = $(C_SRC:.c=.o)
 
 all: $(NAME)
 
-#make -C to call the libft
-#cp to copy the libft.a to the ft_printf dir
-
-$(NAME): $(OBJS)
-	@make -C $(LIBFT)
+$(NAME): $(SRC_OBJ)
+	@make -C $(LIBFT_DIR)
 	@cp libft/libft.a ./$(NAME)
-	@ar rc $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(SRC_OBJ)
 	@ranlib $(NAME)
 
-#Compile with the flags
-
 .o.c:
-	@$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
+	@$(CC) $(C_FLAGS) -I $(HEADER) -o $@ -c $<
 
 clean:
-	@rm -f $(OBJS)
-	@make clean -C $(LIBFT)
+	@rm -f *.o
+	@make clean -C $(LIBFT_DIR)
 
 fclean: clean
 	@rm -f $(NAME)
-	@make fclean -C $(LIBFT)
+	@make fclean -C $(LIBFT_DIR)
 
 re: fclean all
 
