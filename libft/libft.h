@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 21:03:23 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/17 21:02:20 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/24 20:33:17 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <string.h>
 # include <strings.h>
 
-void		ft_putbase(unsigned int n, char *base, unsigned int base_size);
+int		ft_putbase(unsigned long int n, char *base, unsigned int base_size);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);

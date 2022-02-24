@@ -6,15 +6,19 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 18:26:25 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/23 20:32:16 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/24 20:42:56 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putbase(unsigned int n, char *base, unsigned int base_size)
+int	ft_putbase(unsigned long int n, char *base, unsigned int base_size)
 {
+	static int ret;
+
+	ret = 0;
     if  (n >= base_size)
-        ft_putbase(n / base_size, base, base_size);
-    write(1, &base[n % base_size], 1);
+        ret += ft_putbase(n / base_size, base, base_size);
+    ret += write(1, &base[n % base_size], 1);
+	return (ret);
 }

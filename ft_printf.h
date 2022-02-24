@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:19:21 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/23 19:23:01 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/24 19:32:52 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_printf(const char *format, ...);
 int	ft_printf_iteri(const char *format, va_list *args, int counter);
 int	ft_printf_convert_c(char c);
 int	ft_printf_convert_s(char *s);
-int	ft_printf_convert_p(long p);
+int	ft_printf_convert_p(unsigned long int p);
 int	ft_printf_convert_di(int di);
 int	ft_printf_convert_u(unsigned int u);
 int	ft_printf_convert_x(long x);

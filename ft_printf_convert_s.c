@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:20:28 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/12 18:21:29 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/24 19:16:20 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_printf_convert_s(char *s)
 {
+	if (s == NULL)
+		return (write(1, "(null)", 6));
 	return (write(1, s, ft_strlen(s)));
 }
