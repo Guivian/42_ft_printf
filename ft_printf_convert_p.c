@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 17:53:53 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/24 20:35:25 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/25 17:55:19 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_printf_convert_p(unsigned long int p)
 {
 	write(1, "0x", 2);
-	return (ft_putbase(p, "0123456789abcdef", 16) + 2);
+	return (ft_uli_base(p, "0123456789abcdef") + 2);
 }

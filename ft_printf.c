@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:20:48 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/24 20:43:42 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:56:18 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	ft_printf_iteri(const char *format, va_list *args, int counter)
 			else if (format[i] == 'x')
 				counter += ft_printf_convert_x(va_arg(*args, long));
 			else if (format[i] == 'X')
-				counter = ft_printf_convert_mx(va_arg(*args, long));
+				counter += ft_printf_convert_mx(va_arg(*args, long));
 			else if (format[i] == '%')
 				counter += write(1, "%", 1);
 		}
@@ -59,12 +59,10 @@ int	ft_printf_iteri(const char *format, va_list *args, int counter)
 	return (counter);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	int	i = -1;
-	void	*p = &i;
 	int len = 0;
 	int	len1 = 0;
-	len = ft_printf("1 %p len = %i ", p, len);
-	len1 = printf("\n2 %p len = %i ", p, len);
-}
+	len = ft_printf(" %X len = %d ", -9, len);
+	len1 = printf("\n %X len = %d ", -9, len1);
+}*/

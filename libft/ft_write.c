@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_convert_di.c                             :+:      :+:    :+:   */
+/*   ft_write.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 19:27:00 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/25 18:23:10 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/02/25 19:26:27 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/02/25 19:27:58 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_printf_convert_di(int di)
+int	ft_write(int c)
 {
-	return (ft_putnumber(di));
+	return (write(1, &c, 1));
 }

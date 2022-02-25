@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:19:21 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/24 19:32:52 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:41:11 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printf_convert_s(char *s);
 int	ft_printf_convert_p(unsigned long int p);
 int	ft_printf_convert_di(int di);
 int	ft_printf_convert_u(unsigned int u);
-int	ft_printf_convert_x(long x);
-int	ft_printf_convert_mx(long mx);
+int	ft_printf_convert_x(unsigned int x);
+int	ft_printf_convert_mx(unsigned mx);
 
 #endif

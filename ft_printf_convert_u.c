@@ -6,7 +6,7 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 16:47:02 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/16 16:51:21 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/25 18:23:26 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_printf_convert_u(unsigned int u)
 {
-	return (write(1, ft_itoa(u), ft_strlen(ft_itoa(u))));
+	return (ft_putnumber(u));
 }

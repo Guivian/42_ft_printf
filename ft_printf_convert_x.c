@@ -6,14 +6,13 @@
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:00:51 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/23 20:30:57 by lbarbosa         ###   ########.fr       */
+/*   Updated: 2022/02/25 19:40:22 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_convert_x(long x)
+int	ft_printf_convert_x(unsigned int x)
 {
-	ft_putbase(x, "0123456789abcdef", 16);
-	return (1);
+	return (ft_putbase(x, "0123456789abcdef"));
 }
