@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnumber.c                                     :+:      :+:    :+:   */
+/*   ft_put_unsigned_number.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/25 18:20:39 by lbarbosa          #+#    #+#             */
-/*   Updated: 2022/02/27 19:42:13 by lbarbosa         ###   ########.fr       */
+/*   Created: 2022/02/27 19:07:58 by lbarbosa          #+#    #+#             */
+/*   Updated: 2022/02/27 19:39:22 by lbarbosa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putnumber(int n)
+int	ft_put_unsigned_number(unsigned int n)
 {
-	int	nbr;
 	int	ret;
 
 	ret = 0;
-	if (n == -2147483648)
-		return (write(1, "-2147483648", 11));
-	if (n < 0)
-	{
-		ret += write(1, "-", 1);
-		n *= -1;
-	}
 	if (n >= 10)
-		ret += ft_putnumber(n / 10);
+		ret += ft_put_unsigned_number(n / 10);
 	ret += ft_write(n % 10 + '0');
 	return (ret);
 }
