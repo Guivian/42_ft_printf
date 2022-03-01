@@ -6,11 +6,15 @@
 #    By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/21 18:16:01 by lbarbosa          #+#    #+#              #
-#    Updated: 2022/02/27 19:13:46 by lbarbosa         ###   ########.fr        #
+#    Updated: 2022/03/01 16:47:02 by lbarbosa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror
 
 HEADER = libft.h
 
@@ -21,10 +25,6 @@ SRC_OBJ = $(C_SRC:.c=.o)
 C_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 BONUS_OBJ = $(C_BONUS:.c=.o)
-
-CC = gcc
-
-CFlAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
