@@ -6,7 +6,7 @@
 #    By: lbarbosa <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/18 20:45:57 by lbarbosa          #+#    #+#              #
-#    Updated: 2022/02/23 18:55:54 by lbarbosa         ###   ########.fr        #
+#    Updated: 2022/02/27 19:33:06 by lbarbosa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT_DIR =	libft
 
 HEADER = ft_printf.h -L./libft -lft
 
-C_SRC = ft_printf.c ft_printf_convert_c.c ft_printf_convert_s.c ft_printf_convert_di.c ft_printf_convert_u.c ft_printf_convert_p.c ft_printf_convert_x.c ft_printf_convert_mx.c
+C_SRC = ft_printf.c ft_printf_c.c ft_printf_s.c ft_printf_di.c ft_printf_u.c ft_printf_p.c ft_printf_x.c ft_printf_mx.c
 
 SRC_OBJ = $(C_SRC:.c=.o)
 
